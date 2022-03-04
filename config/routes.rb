@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   authenticated :user do
     get '/admin', to: 'admin#index', as: 'root_admin'
-    get '/member', to: 'admin#index', as: 'root_member'
+    get '/member', to: 'member#index', as: 'root_member'
   end
   
   devise_scope :user do
