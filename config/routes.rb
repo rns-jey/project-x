@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 
   authenticated :user do
     get '/admin', to: 'admin#index', as: 'root_admin'
+    get '/member', to: 'admin#index', as: 'root_member'
   end
   
-  root :to => "member#index"
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
 end
