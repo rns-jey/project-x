@@ -12,12 +12,18 @@
   </head>
 
   <body class="h-full">
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+    <div class="min-h-full">
+      <%= render "layouts/navbar" %>
+      <%= render "layouts/header" %>
+      <main>
+        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+          <!-- Replace with your content -->
+          <div class="px-4 py-6 sm:px-0">
+            <%= yield %>
+          </div>
+          <!-- /End replace -->
+        </div>
+      </main>
+    </div>
   </body>
 </html>
